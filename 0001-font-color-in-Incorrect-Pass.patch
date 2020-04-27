@@ -1,0 +1,78 @@
+
+ public function __construct()
+ 	{		
+ 		parent::__construct();
+ 		$this->load->database();
+
+ 		$this->load->helper('url');
+	    $this->load->library('session');
+ 
+ 	}
+ 	public function index()
+public function __construct()
+ 	{
+ 		if ($this->session->userdata('currently_logged_in')) 
+ 		{
+
+ 		$this->load->view('template/client/header');
+ 		$this->load->view('template/client/subheader');
+ 
+ public function __construct()
+ 		$data['details']=$this->my_model->login_data();
+ 		$this->load->view('template/client/subheader',$data);
+ 		$this->load->view('template/client/footer');
+
+ 		$this->load->model('my_model');
+ 		$data['details']=$this->my_model->login_data();
+ 		
+public function __construct()
+ 		$this->load->view('pages/client/messages',$data);
+ 		$this->load->view('template/client/subfooter',$data);
+ 		$this->load->view('template/client/footer',$data);
+
+ 		} else { 
+ 		redirect('Main/invalid');
+ 		}	
+public function __construct()
+ 	{
+ 		if ($this->session->userdata('currently_logged_in')) 
+ 		{
+		$this->load->view('template/client/header');
+ 		$this->load->view('template/client/subheader');
+ 		$this->load->view('pages/client/update');
+public function __construct()
+ 		$this->load->view('template/client/subheader',$data);
+ 		$this->load->view('template/client/subfooter');
+ 		$this->load->view('template/client/footer');
+	$this->load->model('my_model');
+$this->load->model('my_model');
+ 		$data['details']=$this->my_model->login_data();
+ 		
+ 		$this->load->view('template/client/header',$data);
+ 		$this->load->view('pages/client/update',$data);
+ 		$this->load->view('template/client/subfooter',$data);
+ 		$this->load->view('template/client/footer',$data);
+
+ 		} else { 
+ 		redirect('Main/invalid');
+ 		}	
+
+          else { 
+ 
+             $this->load->model('Client_register_model');
+-
+ 		    $this->Client_register_model->saveCustomerz();
+-
+ 		    $success = "Your account has been successfully created!";
++            redirect('main/home', compact('success'));
+ 
+-		    $this->load->view('template/client/header');
+-		     
+-            $this->load->view('pages/client/home', compact('success'));
+-
+-            $this->load->view('template/client/footer');
++          
+ 
+          } 
+       }
+
